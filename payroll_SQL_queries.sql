@@ -1,18 +1,10 @@
-create database Dog;
-use Dog;
-create table dog
+create database employee_payroll_service
+use employee_payroll_service
+
+create table employee_payroll
 (
-	id int,
-	name varchar(200),
-	amount float,
-	purchasingDate date
+ id int identity(1,1) primary key,
+ name varchar(100) not null,
+ salary money not null,
+ start date not null
 );
-insert into dog (id,name,amount,purchasingDate)values(12,'pummi',10000.45,'2022-04-25'),
-(23,'dabar',15000,'2022-07-12'),
-(45,'pinki',25000,'2022-05-22');
-
-update dog set amount=1500.25 where id=23;
-
-alter table dog Add borrowDate date NOT NULL AFTER name;
-
-select * from dog;
