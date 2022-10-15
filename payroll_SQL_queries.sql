@@ -29,3 +29,15 @@ where start between cast('2019-11-13' As datetime) and GETDATE();
 
 ALTER TABLE employee_payroll
 ADD Gender char(2)
+
+update employee_payroll set Gender = 'M' where name = 'Billi' or name = 'Charlie';
+update employee_payroll set Gender = 'F' where name = 'Terisa';
+
+select sum(salary) from employee_payroll where gender='M' group by Gender;
+select sum(salary) from employee_payroll  group by Gender;
+select sum(salary) as 'totalSalary',gender from employee_payroll group by Gender;
+select avg(salary) as 'averageSalary',gender from employee_payroll group by Gender;
+select min(salary) as 'minimumSalary',gender from employee_payroll group by Gender;
+select max(salary) as 'maximumSalary',gender from employee_payroll group by Gender;
+select count(Gender) as 'male' from employee_payroll where gender='M' 
+select count(Gender) as 'female' from employee_payroll where gender='F'
