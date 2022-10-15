@@ -26,3 +26,6 @@ select salary from employee_payroll where name = 'billi'
 
 select * from employee_payroll
 where start between cast('2019-11-13' As datetime) and GETDATE();
+
+ALTER TABLE employee_payroll
+ADD Gender char(2)
