@@ -21,3 +21,8 @@ insert into employee_payroll values
 ('Charlie',300000.0,'2021-05-21')
 
 select * from employee_payroll;
+
+select salary from employee_payroll where name = 'billi'
+
+select * from employee_payroll
+where start between cast('2019-11-13' As datetime) and GETDATE();
